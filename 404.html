@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found — walletii</title>
+<meta name="description" content="The page you're looking for doesn't exist.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Figtree:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#07212e;--teal:#00c9b7;--teal-deep:#00897d;--red:#c8102e;--white:#fff;
+  --line:rgba(7,33,46,.1);
+  --disp:"Bricolage Grotesque",sans-serif;--body:"Figtree",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:#fff;line-height:1.55;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+a{color:inherit}
+.nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:50;width:min(1140px,calc(100% - 28px));
+  display:flex;align-items:center;justify-content:space-between;padding:10px 14px 10px 22px;border-radius:999px;
+  background:rgba(255,255,255,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid var(--line);box-shadow:0 10px 32px -16px rgba(7,33,46,.25)}
+.brand{display:flex;align-items:baseline;gap:8px;text-decoration:none}
+.brand .w{font-family:var(--disp);font-weight:800;font-size:1.4rem;letter-spacing:-.03em}
+.brand .w i{font-style:normal;color:var(--teal)}
+.brand .by{font-size:.62rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#6b7e89}
+.brand .by b{color:var(--red)}
+.nav-links{display:flex;gap:26px;list-style:none}
+.nav-links a{text-decoration:none;font-weight:600;font-size:.92rem;color:#2c4250;position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--teal);border-radius:2px;transition:width .25s}
+.nav-links a:hover::after{width:100%}
+.btn{display:inline-flex;align-items:center;border:none;border-radius:999px;font-weight:700;font-size:.95rem;
+  padding:13px 24px;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-teal{background:var(--teal);color:var(--ink)}
+.hero{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;padding:140px 24px 80px}
+.hero h1{font-family:var(--disp);font-size:clamp(5rem,14vw,9rem);font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--teal);margin-bottom:4px}
+.hero h2{font-family:var(--disp);font-size:clamp(1.4rem,3vw,2.2rem);font-weight:700;letter-spacing:-.02em;margin-bottom:14px}
+.hero p{color:#3c5260;font-size:1.08rem;margin-bottom:32px}
+@media(max-width:680px){.nav-links{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main navigation">
+  <a class="brand" href="/" aria-label="walletii home">
+    <span class="w">wallet<i>ii</i></span>
+    <span class="by">by <b>Ooredoo</b> Fintech</span>
+  </a>
+  <ul class="nav-links" role="list">
+    <li><a href="about">About us</a></li>
+    <li><a href="features">Features</a></li>
+    <li><a href="loyalty">Loyalty</a></li>
+    <li><a href="faq">FAQs</a></li>
+  </ul>
+  <a class="btn btn-teal" href="/#download">Download now</a>
+</nav>
+<main class="hero">
+  <div>
+    <h1>404</h1>
+    <h2>Page not found</h2>
+    <p>The page you're looking for doesn't exist or has moved.</p>
+    <a class="btn btn-teal" href="/">Go to homepage</a>
+  </div>
+</main>
+</body>
+</html>
