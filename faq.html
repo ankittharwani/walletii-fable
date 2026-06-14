@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQs — walletii</title>
+<meta name="description" content="Frequently asked questions about walletii: getting started, payments, fees, security and rewards.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Figtree:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#07212e;--ink-2:#0d3242;--teal:#00c9b7;--teal-deep:#00897d;--teal-ghost:rgba(0,201,183,.12);
+  --mint:#eafbf8;--sand:#fff7ea;--gold:#f2b33d;--gold-deep:#d9941a;--red:#c8102e;--white:#fff;
+  --line:rgba(7,33,46,.1);--shadow:0 24px 60px -24px rgba(7,33,46,.28);
+  --r-lg:28px;--r-md:18px;--r-sm:12px;
+  --disp:"Bricolage Grotesque",sans-serif;--body:"Figtree",sans-serif;--mono:"DM Mono",monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:#fff;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--teal-deep);display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--teal);border-radius:2px}
+h1,h2,h3{font-family:var(--disp);line-height:1.06;letter-spacing:-.015em}
+h2{font-size:clamp(2rem,4.4vw,3.2rem);font-weight:700;margin:14px 0 16px}
+.sub{font-size:1.08rem;color:#3c5260;max-width:560px}
+.nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:50;width:min(1140px,calc(100% - 28px));
+  display:flex;align-items:center;justify-content:space-between;padding:10px 14px 10px 22px;border-radius:999px;
+  background:rgba(255,255,255,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid var(--line);box-shadow:0 10px 32px -16px rgba(7,33,46,.25)}
+.brand{display:flex;align-items:baseline;gap:8px;text-decoration:none}
+.brand .w{font-family:var(--disp);font-weight:800;font-size:1.4rem;letter-spacing:-.03em}
+.brand .w i{font-style:normal;color:var(--teal)}
+.brand .by{font-size:.62rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#6b7e89}
+.brand .by b{color:var(--red)}
+.nav-links{display:flex;gap:26px;list-style:none}
+.nav-links a{text-decoration:none;font-weight:600;font-size:.92rem;color:#2c4250;position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--teal);border-radius:2px;transition:width .25s}
+.nav-links a:hover::after,.nav-links a.on::after{width:100%}
+.nav-links a.on{color:var(--teal-deep)}
+.btn{display:inline-flex;align-items:center;gap:9px;border:none;border-radius:999px;font-weight:700;font-size:.95rem;padding:13px 24px;text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}.btn:active{transform:translateY(0)}
+.btn-teal{background:var(--teal);color:var(--ink);box-shadow:0 12px 28px -10px rgba(0,201,183,.6)}.btn-teal:hover{background:#00ddc9}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-gold{background:var(--gold);color:#5b3a00;box-shadow:0 12px 28px -10px rgba(242,179,61,.6)}.btn-gold:hover{background:#ffc457}
+section{padding:96px 0}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.page-hero{position:relative;padding:168px 0 80px;overflow:hidden;background:
+  radial-gradient(1000px 560px at 80% -10%, rgba(0,201,183,.2), transparent 60%),
+  radial-gradient(760px 480px at -8% 100%, rgba(242,179,61,.12), transparent 55%),
+  linear-gradient(180deg,#f4fffd 0%,#fff 80%)}
+.page-hero h1{font-size:clamp(2.5rem,5.4vw,4rem);font-weight:800;max-width:760px}
+.page-hero .lede{margin-top:20px;font-size:1.14rem;color:#33505f;max-width:560px}
+.cta-band{background:var(--ink);color:#fff;text-align:center;position:relative;overflow:hidden}
+.cta-band::before{content:"";position:absolute;width:560px;height:560px;left:-200px;bottom:-300px;border-radius:50%;background:radial-gradient(circle,rgba(0,201,183,.2),transparent 65%)}
+.cta-band::after{content:"";position:absolute;width:460px;height:460px;right:-160px;top:-220px;border-radius:50%;background:radial-gradient(circle,rgba(242,179,61,.16),transparent 65%)}
+.cta-band .wrap{position:relative;z-index:1}
+.cta-band p{color:#9fb4be;max-width:520px;margin:14px auto 30px}
+.support-line{margin-top:34px;font-size:.9rem;color:#9fb4be}
+.support-line a{color:var(--teal);font-weight:700;text-decoration:none}
+footer{background:#041821;color:#8aa0ab;padding:60px 0 36px;font-size:.88rem}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:44px}
+.foot-grid h4{color:#fff;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;font-family:var(--mono);font-weight:500}
+.foot-grid ul{list-style:none;display:grid;gap:10px}
+.foot-grid a{text-decoration:none;transition:color .2s}.foot-grid a:hover{color:var(--teal)}
+.foot-brand .w{font-family:var(--disp);font-weight:800;font-size:1.5rem;color:#fff}
+.foot-brand .w i{font-style:normal;color:var(--teal)}
+.foot-brand p{margin-top:12px;max-width:280px;line-height:1.6}
+.lang-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.lang-row a{border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:5px 13px;font-size:.76rem;text-decoration:none}
+.lang-row a:hover{border-color:var(--teal);color:var(--teal)}
+.foot-base{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.78rem}
+.foot-base .ooredoo b{color:#ff4a5e}
+@media (max-width:980px){
+  .nav .btn{padding:10px 16px;font-size:.84rem;white-space:nowrap}
+  .nav-links{display:none}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  section{padding:72px 0}
+  .page-hero{padding-top:128px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}
+}
+
+.faq-hero .search{display:flex;gap:10px;background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:6px 6px 6px 22px;align-items:center;max-width:560px;margin-top:30px;box-shadow:0 18px 44px -24px rgba(7,33,46,.35)}
+.faq-hero .search:focus-within{border-color:var(--teal)}
+.faq-hero .search input{flex:1;border:none;background:transparent;outline:none;font-size:1.02rem;font-family:var(--body);padding:12px 0;color:var(--ink)}
+.cats{display:flex;gap:9px;flex-wrap:wrap;margin:34px 0 8px}
+.cat{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:8px 16px;font-size:.86rem;font-weight:700;transition:all .2s;color:#2c4250}
+.cat:hover{border-color:var(--teal)}
+.cat.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+.faq-list{max-width:820px;margin:26px auto 0;display:grid;gap:12px}
+details.qa{background:#fff;border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;transition:border-color .2s,box-shadow .2s}
+details.qa[open]{border-color:rgba(0,201,183,.5);box-shadow:0 16px 36px -24px rgba(0,137,125,.5)}
+details.qa summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 22px;font-weight:700;font-size:1rem}
+details.qa summary::-webkit-details-marker{display:none}
+details.qa summary .pm{flex:none;width:30px;height:30px;border-radius:50%;background:var(--mint);color:var(--teal-deep);display:grid;place-items:center;font-weight:800;font-size:1.1rem;transition:transform .25s,background .25s}
+details.qa[open] summary .pm{transform:rotate(45deg);background:var(--teal);color:var(--ink)}
+details.qa .ans{padding:0 22px 20px;color:#3c5260;font-size:.95rem;line-height:1.65}
+details.qa .ans ul{margin:8px 0 0 20px}
+details.qa .ans a{color:var(--teal-deep);font-weight:600}
+.qa-cat{font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-deep);background:var(--teal-ghost);border-radius:999px;padding:3px 10px;margin-left:auto;flex:none}
+.no-results{display:none;text-align:center;padding:50px 20px;color:#5a707d}
+.no-results.show{display:block}
+.no-results .big{font-size:2.4rem;margin-bottom:10px}
+.faq-count{font-family:var(--mono);font-size:.78rem;color:#6b7e89;margin-top:10px}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <a class="brand" href="/" aria-label="walletii home">
+    <span class="w">wallet<i>ii</i></span>
+    <span class="by">by <b>ooredoo</b> fintech</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about">About us</a></li>
+    <li><a href="features">Features</a></li>
+    <li><a href="loyalty">Loyalty</a></li>
+    <li><a href="faq" class="on">FAQs</a></li>
+  </ul>
+  <a class="btn btn-teal" href="/#download">Download now</a>
+</nav>
+
+<header class="page-hero faq-hero">
+  <div class="wrap">
+    <span class="eyebrow">FAQs</span>
+    <h1>Frequently asked questions</h1>
+    <p class="lede">Everything about getting started, sending money, fees, security, and rewards — searchable in seconds.</p>
+    <div class="search">
+      <span aria-hidden="true">🔎</span>
+      <input id="faqSearch" type="text" placeholder="Search — try 'alias', 'limit', 'UPI', 'fraud'…" aria-label="Search frequently asked questions">
+    </div>
+  </div>
+</header>
+
+<section style="padding-top:10px">
+  <div class="wrap">
+    <div class="cats" role="group" aria-label="FAQ categories">
+      <button class="cat active" data-cat="All">All</button><button class="cat" data-cat="Getting started">Getting started</button><button class="cat" data-cat="My profile & account">My profile & account</button><button class="cat" data-cat="Adding money">Adding money</button><button class="cat" data-cat="International payments">International payments</button><button class="cat" data-cat="Local payments">Local payments</button><button class="cat" data-cat="Rates & charges">Rates & charges</button><button class="cat" data-cat="Security & fraud">Security & fraud</button><button class="cat" data-cat="Bills & recharges">Bills & recharges</button><button class="cat" data-cat="Rewards & referrals">Rewards & referrals</button>
+    </div>
+    <p class="faq-count" id="faqCount"></p>
+    <div class="faq-list" id="faqList">
+      <details class="qa" data-cat="Getting started"><summary>How can I sign up and start using walletii?<span class="qa-cat">Getting started</span><span class="pm">+</span></summary><div class="ans">Download the walletii app, and it will guide you through the sign-up process. We have to verify your identity before you can send or receive money — you'll be asked to take a selfie and scan your ID, so have it at hand.</div></details>
+<details class="qa" data-cat="Getting started"><summary>Am I eligible to open a walletii account?<span class="qa-cat">Getting started</span><span class="pm">+</span></summary><div class="ans">To open a walletii account, you must be over 18, hold a valid Omani ID (identity card or resident card), and have an Omani phone number. You can also hold multiple wallets with different providers at the same time.</div></details>
+<details class="qa" data-cat="Getting started"><summary>How does my walletii account become activated?<span class="qa-cat">Getting started</span><span class="pm">+</span></summary><div class="ans">Once you've finished the quick verification process, your account usually opens within a couple of minutes. Occasionally we may need to do additional identity checks, which take 1–3 business days.</div></details>
+<details class="qa" data-cat="Getting started"><summary>Will I be charged for opening walletii?<span class="qa-cat">Getting started</span><span class="pm">+</span></summary><div class="ans">No — opening a walletii wallet is free, and you won't be charged for keeping a zero balance or being inactive.</div></details>
+<details class="qa" data-cat="Getting started"><summary>Why can't I find walletii on the App Store or Google Play?<span class="qa-cat">Getting started</span><span class="pm">+</span></summary><div class="ans">Make sure you're searching the App Store or Google Play of a country where walletii is available. You can always switch your store location.</div></details>
+<details class="qa" data-cat="Getting started"><summary>Is the walletii app available for HarmonyOS?<span class="qa-cat">Getting started</span><span class="pm">+</span></summary><div class="ans">The walletii app is only available for iOS and Android.</div></details>
+<details class="qa" data-cat="My profile & account"><summary>What is an alias?<span class="qa-cat">My profile & account</span><span class="pm">+</span></summary><div class="ans">An alias is a unique identifier for your wallet that you can share to receive money from any other wallet or bank. All walletii aliases end in @WLTI. You're given a random alias at sign-up, but we recommend changing the part before the @ to something memorable, in settings.</div></details>
+<details class="qa" data-cat="My profile & account"><summary>What is a 'default wallet', and how do I set it up?<span class="qa-cat">My profile & account</span><span class="pm">+</span></summary><div class="ans">Your default wallet receives any money sent to your phone number. To make walletii your default, go to your profile and enable the 'Set as default wallet' switch. To make another wallet the default, set it from that wallet.</div></details>
+<details class="qa" data-cat="My profile & account"><summary>I have forgotten my passcode. What can I do?<span class="qa-cat">My profile & account</span><span class="pm">+</span></summary><div class="ans">Use the forgotten-passcode feature: we'll take a selfie to verify your identity, then you can create a new passcode.</div></details>
+<details class="qa" data-cat="My profile & account"><summary>What if I lose my phone?<span class="qa-cat">My profile & account</span><span class="pm">+</span></summary><div class="ans">Download walletii on your new phone and log in with your existing number. We'll verify your phone number and passcode, which automatically signs out the account on the lost phone.</div></details>
+<details class="qa" data-cat="My profile & account"><summary>What if I want to change my phone number?<span class="qa-cat">My profile & account</span><span class="pm">+</span></summary><div class="ans">For security reasons, the phone number linked to your account can't be changed. You'll need to close your existing account and open a new one with your new number.</div></details>
+<details class="qa" data-cat="My profile & account"><summary>My ID has expired — what should I do?<span class="qa-cat">My profile & account</span><span class="pm">+</span></summary><div class="ans">Log in to the app and you'll be prompted to update your personal details, where you can upload a new ID. You're good to go once it's verified.</div></details>
+<details class="qa" data-cat="My profile & account"><summary>How do I close my walletii account?<span class="qa-cat">My profile & account</span><span class="pm">+</span></summary><div class="ans">Go to profile settings → Account details → Close account. Make sure your balance is 0 OMR first — otherwise we can't close it. Closures are processed within two weeks.</div></details>
+<details class="qa" data-cat="Adding money"><summary>How can I add money to my wallet?<span class="qa-cat">Adding money</span><span class="pm">+</span></summary><div class="ans">Three ways: use your bank card via 'Add money' in the app; send money from a local bank account to your walletii alias (found in Profile); or send from any other local wallet.</div></details>
+<details class="qa" data-cat="Adding money"><summary>Will I be charged for adding money?<span class="qa-cat">Adding money</span><span class="pm">+</span></summary><div class="ans">No — adding money is always free.</div></details>
+<details class="qa" data-cat="Adding money"><summary>Can I use a non-Omani card to add money?<span class="qa-cat">Adding money</span><span class="pm">+</span></summary><div class="ans">No, only Omani debit or prepaid cards are accepted.</div></details>
+<details class="qa" data-cat="Adding money"><summary>Is there a limit to how much money I can add?<span class="qa-cat">Adding money</span><span class="pm">+</span></summary><div class="ans">You can add up to 500 OMR in a single top-up, with a daily limit and maximum balance of 1,000 OMR.</div></details>
+<details class="qa" data-cat="International payments"><summary>Can I send money abroad using walletii?<span class="qa-cat">International payments</span><span class="pm">+</span></summary><div class="ans">Yes — to over 200 countries. Enter the amount, pick a delivery method, fill in the recipient's details, confirm, and the money is on its way. We'll keep you updated until it arrives.</div></details>
+<details class="qa" data-cat="International payments"><summary>What delivery options are available?<span class="qa-cat">International payments</span><span class="pm">+</span></summary><div class="ans">You can send to bank accounts, cash pick-up points, wallets abroad, or any Visa or Mastercard payment card. Available options vary by country and are shown when you choose the destination.</div></details>
+<details class="qa" data-cat="International payments"><summary>How long do international transactions take?<span class="qa-cat">International payments</span><span class="pm">+</span></summary><div class="ans">Cash pick-ups are ready to collect in 10 minutes or less. Bank transfers usually arrive the next day, depending on the local bank. We'll keep you updated throughout.</div></details>
+<details class="qa" data-cat="International payments"><summary>Can I send money to India using UPI?<span class="qa-cat">International payments</span><span class="pm">+</span></summary><div class="ans">Yes — walletii supports sending to India via UPI, making transfers home faster and easier.</div></details>
+<details class="qa" data-cat="International payments"><summary>Why do I see more options to send money to one country?<span class="qa-cat">International payments</span><span class="pm">+</span></summary><div class="ans">Walletii lets you select both the delivery method and the provider, so you can choose based on your preferred rate, fee, speed, or delivery method.</div></details>
+<details class="qa" data-cat="International payments"><summary>Is there a limit on international transfers?<span class="qa-cat">International payments</span><span class="pm">+</span></summary><div class="ans">Yes — 1,000 OMR per single transaction and per day, and 15,000 OMR per month across all outgoing transactions.</div></details>
+<details class="qa" data-cat="Local payments"><summary>Can I transfer money between walletii and bank accounts?<span class="qa-cat">Local payments</span><span class="pm">+</span></summary><div class="ans">Yes. To receive from a bank, share your walletii alias (in Profile) and use it in your banking app. To send to a bank, add a new local recipient in 'Send money' and enter your bank account's alias.</div></details>
+<details class="qa" data-cat="Local payments"><summary>Can I send money to other mobile wallets?<span class="qa-cat">Local payments</span><span class="pm">+</span></summary><div class="ans">Yes — to any local wallet, instantly. You only need the recipient's phone number or alias.</div></details>
+<details class="qa" data-cat="Local payments"><summary>How fast are the transfers?<span class="qa-cat">Local payments</span><span class="pm">+</span></summary><div class="ans">Local payments are instant — the recipient gets the money immediately.</div></details>
+<details class="qa" data-cat="Local payments"><summary>Is there a limit to how much money I can send locally?<span class="qa-cat">Local payments</span><span class="pm">+</span></summary><div class="ans">Yes — up to 500 OMR per day.</div></details>
+<details class="qa" data-cat="Local payments"><summary>What is 'request money', and how can I use it?<span class="qa-cat">Local payments</span><span class="pm">+</span></summary><div class="ans">Tap 'Request money', enter the amount, and share it with a saved contact or as a QR code through other apps. The QR can be scanned by walletii 'Scan and pay' or other local wallets.</div></details>
+<details class="qa" data-cat="Local payments"><summary>What should I do if I get a payment request?<span class="qa-cat">Local payments</span><span class="pm">+</span></summary><div class="ans">You'll get a notification and an in-app banner. Open it to confirm or decline — you have 2 minutes before the request expires. Always check you recognise the person and the amount.</div></details>
+<details class="qa" data-cat="Local payments"><summary>How can I pay at stores using walletii?<span class="qa-cat">Local payments</span><span class="pm">+</span></summary><div class="ans">In most stores that accept cards, ask for a QR code at checkout and use 'Scan and pay'. Some merchants may share their phone number for payment instead.</div></details>
+<details class="qa" data-cat="Local payments"><summary>How can I withdraw money?<span class="qa-cat">Local payments</span><span class="pm">+</span></summary><div class="ans">Simply send the money to another wallet or to a bank account.</div></details>
+<details class="qa" data-cat="Rates & charges"><summary>Are there any transaction fees?<span class="qa-cat">Rates & charges</span><span class="pm">+</span></summary><div class="ans">Sending within Oman is free. International transfers may carry a fee depending on the destination, provider, and delivery option, plus VAT where applicable — always shown clearly in the app before you confirm.</div></details>
+<details class="qa" data-cat="Rates & charges"><summary>Will I be charged for receiving money?<span class="qa-cat">Rates & charges</span><span class="pm">+</span></summary><div class="ans">No — receiving money into walletii is free.</div></details>
+<details class="qa" data-cat="Rates & charges"><summary>Do I need to maintain a minimum balance?<span class="qa-cat">Rates & charges</span><span class="pm">+</span></summary><div class="ans">No minimum balance is required. You can keep it at 0 — we won't charge you for inactivity.</div></details>
+<details class="qa" data-cat="Rates & charges"><summary>Is there a maximum balance for my account?<span class="qa-cat">Rates & charges</span><span class="pm">+</span></summary><div class="ans">Yes — your wallet balance cannot exceed 1,000 OMR.</div></details>
+<details class="qa" data-cat="Security & fraud"><summary>Is walletii safe?<span class="qa-cat">Security & fraud</span><span class="pm">+</span></summary><div class="ans">Yes. We use the latest technology to keep your money secure and comply with all relevant Omani and international security standards. We also choose partners like MoneyGram for their proven approach to financial and data security.</div></details>
+<details class="qa" data-cat="Security & fraud"><summary>How does walletii protect my account?<span class="qa-cat">Security & fraud</span><span class="pm">+</span></summary><div class="ans">Your account is secured with a passcode or biometrics. We constantly monitor for suspicious activity and act immediately when needed. Official updates only ever come through walletii channels.</div></details>
+<details class="qa" data-cat="Security & fraud"><summary>What can I do to keep my account safe?<span class="qa-cat">Security & fraud</span><span class="pm">+</span></summary><div class="ans">Choose a strong, unique passcode and change it regularly. Don't reuse your phone-unlock code, never share or write down your passcode, lock your device, enable biometrics, and review your transactions often. Suspect fraud? Call +968-80008880 or email support.om@walletii.com.</div></details>
+<details class="qa" data-cat="Security & fraud"><summary>How can I identify and avoid fraud?<span class="qa-cat">Security & fraud</span><span class="pm">+</span></summary><div class="ans">Watch for unexpected prize or job messages, or ads claiming you've won money from walletii or its partners. Be cautious of anyone asking to use your wallet for transfers. If something feels off, verify in the app or contact us directly.</div></details>
+<details class="qa" data-cat="Security & fraud"><summary>What should I do if I suspect fraud?<span class="qa-cat">Security & fraud</span><span class="pm">+</span></summary><div class="ans">In the app, go to Help & Support → Contact Us → Message Us, or call +968-80008880. Never reply to unknown messages or share your passcode.</div></details>
+<details class="qa" data-cat="Bills & recharges"><summary>What bills and services can I pay with walletii?<span class="qa-cat">Bills & recharges</span><span class="pm">+</span></summary><div class="ans">Airtime for Ooredoo, Omantel, Vodafone, FRiENDi, Renna and RedBull Mobile; postpaid mobile, internet and landline bills; water and electricity (including prepaid); education bills at selected schools and universities; government bills including ROP traffic tickets; financial services; media services; and charity donations.</div></details>
+<details class="qa" data-cat="Bills & recharges"><summary>Is there a limit to how much I can pay or recharge?<span class="qa-cat">Bills & recharges</span><span class="pm">+</span></summary><div class="ans">Up to 500 OMR per day. Minimums and maximums vary by biller and service and are shown in the app.</div></details>
+<details class="qa" data-cat="Bills & recharges"><summary>How can I check the status of my bill payment?<span class="qa-cat">Bills & recharges</span><span class="pm">+</span></summary><div class="ans">Go to 'History', tap the arrow at the bottom, then tap the transaction. Note: a payment can show as successful in walletii while the biller takes a few hours to reflect the updated balance.</div></details>
+<details class="qa" data-cat="Bills & recharges"><summary>My recharge or bill payment hasn't reached the biller yet — what's going on?<span class="qa-cat">Bills & recharges</span><span class="pm">+</span></summary><div class="ans">Prepaid payments are usually instant; postpaid bills can take a few hours. If it's been more than 24 hours, contact us via 'Help & support' in the app and we'll look into it right away.</div></details>
+<details class="qa" data-cat="Bills & recharges"><summary>Where can I find the recharge PIN for prepaid electricity?<span class="qa-cat">Bills & recharges</span><span class="pm">+</span></summary><div class="ans">The PIN is sent by SMS to the phone number on your walletii profile. If it doesn't arrive, contact us through 'Help and support' in the app.</div></details>
+<details class="qa" data-cat="Bills & recharges"><summary>Can I pay a bill for a family member?<span class="qa-cat">Bills & recharges</span><span class="pm">+</span></summary><div class="ans">Yes — you can pay bills for others if you know their mobile phone number.</div></details>
+<details class="qa" data-cat="Rewards & referrals"><summary>How can I invite a friend?<span class="qa-cat">Rewards & referrals</span><span class="pm">+</span></summary><div class="ans">Go to 'Invite friends' for your unique referral code and share it. When your friend creates their account, they enter it under 'Invite friends' → 'I have a referral code'.</div></details>
+<details class="qa" data-cat="Rewards & referrals"><summary>I didn't get a referral reward.<span class="qa-cat">Rewards & referrals</span><span class="pm">+</span></summary><div class="ans">You receive the reward once your friend makes their first payment. If they have and your reward hasn't arrived within 10 minutes, contact us via 'Help and support' in the app.</div></details>
+<details class="qa" data-cat="Getting started"><summary>Can I use walletii outside of Oman?<span class="qa-cat">Getting started</span><span class="pm">+</span></summary><div class="ans">Yes, you can use the app abroad just as you would in Oman. However, new users cannot download and sign up while outside the country.</div></details>
+<details class="qa" data-cat="My profile & account"><summary>My verification is pending — what does it mean?<span class="qa-cat">My profile & account</span><span class="pm">+</span></summary><div class="ans">We need a little more time to verify your identity. You'll be notified as soon as the process completes — thanks for your patience.</div></details>
+<details class="qa" data-cat="My profile & account"><summary>My documents have been rejected. What now?<span class="qa-cat">My profile & account</span><span class="pm">+</span></summary><div class="ans">Some of your personal data may have been assessed as incorrect. Try the verification process again, or contact us through 'Help and support' in the app.</div></details>
+<details class="qa" data-cat="My profile & account"><summary>I'm having issues scanning my ID — what do I do?<span class="qa-cat">My profile & account</span><span class="pm">+</span></summary><div class="ans">Clean your ID and try different lighting. If the problem persists, contact us through 'Help and support' in the app.</div></details>
+    </div>
+    <div class="no-results" id="noResults">
+      <div class="big">🤔</div>
+      <p><b>No matching questions.</b><br>Try a different word — or call us 24/7 on <a href="tel:+96880008880" style="color:var(--teal-deep);font-weight:700">8000 8880</a>.</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="cta-band" id="download">
+  <div class="wrap reveal">
+    <h2>Join the walletii community</h2>
+    <p>Download walletii from your app store and make managing your money simple — wherever home is.</p>
+    <a class="btn btn-teal" href="https://om.wlti.co/orKA/ga9g2xt5">App Store</a>
+    <a class="btn btn-ink" style="border:1px solid rgba(255,255,255,.25);margin-left:10px" href="https://om.wlti.co/z4sY/00sodft7">Google Play</a>
+    <p class="support-line">We're here 24/7 — call <a href="tel:+96880008880">8000 8880</a> or email <a href="mailto:support.om@walletii.com">support.om@walletii.com</a>.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="w">wallet<i>ii</i></div>
+        <p>A smart, modern digital wallet built by Ooredoo Fintech — financial clarity and control, designed around local needs.</p>
+        <div class="lang-row">
+          <a href="https://www.walletii.com/om-en">English</a>
+          <a href="https://www.walletii.com/om-ar">العربية</a>
+          <a href="https://www.walletii.com/om-hi">हिन्दी</a>
+        </div>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about">About us</a></li>
+          <li><a href="https://www.ofti.app/">About OFTI</a></li>
+          <li><a href="faq">FAQs</a></li>
+          <li><a href="https://www.walletii.com/om-en/whistleblowing">Whistleblowing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="features">Features</a></li>
+          <li><a href="loyalty">Loyalty</a></li>
+          <li><a href="features#fees">Fee guide</a></li>
+          <li><a href="https://www.walletii.com/om-en/transaction-limits">Transaction limits</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="https://www.walletii.com/om-en/customer-terms">Customer terms</a></li>
+          <li><a href="https://www.walletii.com/om-en/privacy-notice">Privacy notice</a></li>
+          <li><a href="https://www.walletii.com/om-en/complaints-and-disputes">Complaints &amp; disputes</a></li>
+          <li><a href="https://www.walletii.com/om-en/loyalty-terms-and-conditions">Loyalty terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 walletii. All rights reserved. Licensed by the Central Bank of Oman.</span>
+      <span class="ooredoo">Part of the <b>Ooredoo</b> Group</span>
+    </div>
+  </div>
+</footer>
+<script>(function(){
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const items=[...document.querySelectorAll('.qa')],cats=[...document.querySelectorAll('.cat')],
+search=document.getElementById('faqSearch'),noRes=document.getElementById('noResults'),
+countEl=document.getElementById('faqCount');
+let activeCat='All';
+function filterFaq(){
+  const q=search.value.trim().toLowerCase();let visible=0;
+  items.forEach(it=>{
+    const matchCat=activeCat==='All'||it.dataset.cat===activeCat;
+    const matchTxt=!q||it.textContent.toLowerCase().includes(q);
+    const show=matchCat&&matchTxt;
+    it.style.display=show?'':'none';
+    if(show)visible++;
+    if(q&&show)it.open=true; else if(!q)it.open=false;
+  });
+  noRes.classList.toggle('show',visible===0);
+  countEl.textContent=visible+' question'+(visible===1?'':'s')+(activeCat!=='All'?' in '+activeCat:'')+(q?' matching "'+search.value.trim()+'"':'');
+}
+cats.forEach(c=>c.addEventListener('click',()=>{
+  cats.forEach(x=>x.classList.remove('active'));c.classList.add('active');
+  activeCat=c.dataset.cat;filterFaq();
+}));
+search.addEventListener('input',filterFaq);
+filterFaq();
+})();</script>
+</body>
+</html>

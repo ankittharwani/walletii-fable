@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About us — walletii</title>
+<meta name="description" content="Walletii's mission: financially empowering individuals and businesses across MENA, backed by the Ooredoo group.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Figtree:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#07212e;--ink-2:#0d3242;--teal:#00c9b7;--teal-deep:#00897d;--teal-ghost:rgba(0,201,183,.12);
+  --mint:#eafbf8;--sand:#fff7ea;--gold:#f2b33d;--gold-deep:#d9941a;--red:#c8102e;--white:#fff;
+  --line:rgba(7,33,46,.1);--shadow:0 24px 60px -24px rgba(7,33,46,.28);
+  --r-lg:28px;--r-md:18px;--r-sm:12px;
+  --disp:"Bricolage Grotesque",sans-serif;--body:"Figtree",sans-serif;--mono:"DM Mono",monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);color:var(--ink);background:#fff;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:var(--mono);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--teal-deep);display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--teal);border-radius:2px}
+h1,h2,h3{font-family:var(--disp);line-height:1.06;letter-spacing:-.015em}
+h2{font-size:clamp(2rem,4.4vw,3.2rem);font-weight:700;margin:14px 0 16px}
+.sub{font-size:1.08rem;color:#3c5260;max-width:560px}
+.nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:50;width:min(1140px,calc(100% - 28px));
+  display:flex;align-items:center;justify-content:space-between;padding:10px 14px 10px 22px;border-radius:999px;
+  background:rgba(255,255,255,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid var(--line);box-shadow:0 10px 32px -16px rgba(7,33,46,.25)}
+.brand{display:flex;align-items:baseline;gap:8px;text-decoration:none}
+.brand .w{font-family:var(--disp);font-weight:800;font-size:1.4rem;letter-spacing:-.03em}
+.brand .w i{font-style:normal;color:var(--teal)}
+.brand .by{font-size:.62rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#6b7e89}
+.brand .by b{color:var(--red)}
+.nav-links{display:flex;gap:26px;list-style:none}
+.nav-links a{text-decoration:none;font-weight:600;font-size:.92rem;color:#2c4250;position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--teal);border-radius:2px;transition:width .25s}
+.nav-links a:hover::after,.nav-links a.on::after{width:100%}
+.nav-links a.on{color:var(--teal-deep)}
+.btn{display:inline-flex;align-items:center;gap:9px;border:none;border-radius:999px;font-weight:700;font-size:.95rem;padding:13px 24px;text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}.btn:active{transform:translateY(0)}
+.btn-teal{background:var(--teal);color:var(--ink);box-shadow:0 12px 28px -10px rgba(0,201,183,.6)}.btn-teal:hover{background:#00ddc9}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-gold{background:var(--gold);color:#5b3a00;box-shadow:0 12px 28px -10px rgba(242,179,61,.6)}.btn-gold:hover{background:#ffc457}
+section{padding:96px 0}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.page-hero{position:relative;padding:168px 0 80px;overflow:hidden;background:
+  radial-gradient(1000px 560px at 80% -10%, rgba(0,201,183,.2), transparent 60%),
+  radial-gradient(760px 480px at -8% 100%, rgba(242,179,61,.12), transparent 55%),
+  linear-gradient(180deg,#f4fffd 0%,#fff 80%)}
+.page-hero h1{font-size:clamp(2.5rem,5.4vw,4rem);font-weight:800;max-width:760px}
+.page-hero .lede{margin-top:20px;font-size:1.14rem;color:#33505f;max-width:560px}
+.cta-band{background:var(--ink);color:#fff;text-align:center;position:relative;overflow:hidden}
+.cta-band::before{content:"";position:absolute;width:560px;height:560px;left:-200px;bottom:-300px;border-radius:50%;background:radial-gradient(circle,rgba(0,201,183,.2),transparent 65%)}
+.cta-band::after{content:"";position:absolute;width:460px;height:460px;right:-160px;top:-220px;border-radius:50%;background:radial-gradient(circle,rgba(242,179,61,.16),transparent 65%)}
+.cta-band .wrap{position:relative;z-index:1}
+.cta-band p{color:#9fb4be;max-width:520px;margin:14px auto 30px}
+.support-line{margin-top:34px;font-size:.9rem;color:#9fb4be}
+.support-line a{color:var(--teal);font-weight:700;text-decoration:none}
+footer{background:#041821;color:#8aa0ab;padding:60px 0 36px;font-size:.88rem}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:44px}
+.foot-grid h4{color:#fff;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;font-family:var(--mono);font-weight:500}
+.foot-grid ul{list-style:none;display:grid;gap:10px}
+.foot-grid a{text-decoration:none;transition:color .2s}.foot-grid a:hover{color:var(--teal)}
+.foot-brand .w{font-family:var(--disp);font-weight:800;font-size:1.5rem;color:#fff}
+.foot-brand .w i{font-style:normal;color:var(--teal)}
+.foot-brand p{margin-top:12px;max-width:280px;line-height:1.6}
+.lang-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.lang-row a{border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:5px 13px;font-size:.76rem;text-decoration:none}
+.lang-row a:hover{border-color:var(--teal);color:var(--teal)}
+.foot-base{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.78rem}
+.foot-base .ooredoo b{color:#ff4a5e}
+@media (max-width:980px){
+  .nav .btn{padding:10px 16px;font-size:.84rem;white-space:nowrap}
+  .nav-links{display:none}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  section{padding:72px 0}
+  .page-hero{padding-top:128px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}
+}
+
+.story-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.mission-card{background:var(--ink);color:#fff;border-radius:var(--r-lg);padding:46px;position:relative;overflow:hidden}
+.mission-card::before{content:"";position:absolute;right:-70px;top:-90px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(0,201,183,.3),transparent 70%)}
+.mission-card h2{color:#fff}
+.mission-card p{color:#9fb4be;position:relative}
+.timeline{position:relative;margin-top:56px;display:grid;gap:0}
+.timeline::before{content:"";position:absolute;left:23px;top:10px;bottom:10px;width:2px;background:repeating-linear-gradient(180deg,var(--teal) 0 9px,transparent 9px 18px);opacity:.5}
+.tl-item{position:relative;padding:0 0 38px 70px}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{position:absolute;left:0;top:0;width:48px;height:48px;border-radius:50%;background:#fff;border:2px solid var(--teal);display:grid;place-items:center;font-size:1.15rem;box-shadow:0 10px 24px -12px rgba(0,137,125,.5)}
+.tl-item .yr{font-family:var(--mono);font-size:.76rem;letter-spacing:.14em;color:var(--teal-deep);text-transform:uppercase}
+.tl-item h3{font-size:1.22rem;margin:4px 0 6px}
+.tl-item p{font-size:.95rem;color:#5a707d;max-width:560px}
+.tl-item.gold .tl-dot{border-color:var(--gold);box-shadow:0 10px 24px -12px rgba(217,148,26,.6)}
+.tl-item.gold .yr{color:var(--gold-deep)}
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
+.val{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:30px;box-shadow:0 18px 44px -26px rgba(7,33,46,.3);transition:transform .3s}
+.val:hover{transform:translateY(-6px)}
+.val .ic{width:52px;height:52px;border-radius:16px;background:var(--teal-ghost);border:1px solid rgba(0,201,183,.3);display:grid;place-items:center;font-size:1.4rem;margin-bottom:16px}
+.val h3{font-size:1.18rem;margin-bottom:8px}
+.val p{font-size:.92rem;color:#5a707d}
+.ofti-band{background:linear-gradient(180deg,var(--mint),#fff);}
+.ofti-card{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:40px;box-shadow:var(--shadow)}
+.ofti-card h3{font-size:1.5rem}
+@media (max-width:980px){.story-grid{grid-template-columns:1fr;gap:36px}.values{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <a class="brand" href="/" aria-label="walletii home">
+    <span class="w">wallet<i>ii</i></span>
+    <span class="by">by <b>ooredoo</b> fintech</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about" class="on">About us</a></li>
+    <li><a href="features">Features</a></li>
+    <li><a href="loyalty">Loyalty</a></li>
+    <li><a href="faq">FAQs</a></li>
+  </ul>
+  <a class="btn btn-teal" href="/#download">Download now</a>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">About us</span>
+    <h1>Our story</h1>
+    <p class="lede">More than a place to keep your money — a gateway to financial empowerment and inclusion, for individuals and merchants alike.</p>
+  </div>
+</header>
+
+<section style="padding-top:30px">
+  <div class="wrap story-grid">
+    <div class="reveal">
+      <span class="eyebrow">The beginning of a promise</span>
+      <h2>It started with an ambitious mission</h2>
+      <p class="sub">In 2022, we set ourselves a goal: to transform the way people and businesses manage their finances across the Middle East and North Africa. Walletii is the result.</p>
+      <p class="sub" style="margin-top:14px">And it's for everyone — not just Ooredoo customers. Enjoy the peace of mind that comes from safe, reliable money transfers, with full visibility of your money every step of the way.</p>
+    </div>
+    <div class="mission-card reveal">
+      <span class="eyebrow" style="color:var(--teal)">Our mission</span>
+      <h2 style="font-size:1.8rem">Make your financial journey smooth and uneventful</h2>
+      <p>We financially empower individuals and businesses with intuitive tools and a supportive community — all backed by the trusted Ooredoo group, and built in partnership with leading financial and technology experts.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">The journey so far</span>
+      <h2>From promise to the wallet in your pocket</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item reveal"><div class="tl-dot">🌱</div><div class="yr">2022</div><h3>The promise is made</h3><p>Ooredoo Fintech sets out to reinvent everyday finance for MENA — simple, secure, and built around real local needs.</p></div>
+      <div class="tl-item reveal"><div class="tl-dot">🏛️</div><div class="yr">Licensed</div><h3>Regulated by the Central Bank of Oman</h3><p>Walletii launches in Oman under the licence and supervision of the Central Bank of Oman — trust built in from day one.</p></div>
+      <div class="tl-item reveal"><div class="tl-dot">🤝</div><div class="yr">Partnerships</div><h3>MoneyGram &amp; QNB join the journey</h3><p>Partners chosen for their proven approach to financial and data security power transfers to 200+ countries.</p></div>
+      <div class="tl-item gold reveal"><div class="tl-dot">🏆</div><div class="yr">2025</div><h3>Oman's Most Trusted Fintech Brand</h3><p>Voted Most Trusted Fintech Brand 2025 at the Oman's Most Trusted Brand Awards. Thank you for your trust, Oman.</p></div>
+      <div class="tl-item reveal"><div class="tl-dot">🇹🇳</div><div class="yr">Growing</div><h3>Walletii arrives in Tunisia</h3><p>The journey expands across MENA, bringing the same simple, secure wallet to new markets — with more to come.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">What we stand for</span>
+      <h2>Three things we never compromise on</h2>
+    </div>
+    <div class="values">
+      <div class="val reveal"><div class="ic">🔓</div><h3>Empowerment</h3><p>Intuitive tools that put you in control — clear rates, clear fees, and your money visible at every step.</p></div>
+      <div class="val reveal"><div class="ic">🌍</div><h3>Inclusion</h3><p>Open to everyone, for individuals and merchants alike — financial clarity shouldn't depend on who you bank with.</p></div>
+      <div class="val reveal"><div class="ic">🛡️</div><h3>Trust</h3><p>Backed by the Ooredoo group, regulated by the Central Bank of Oman, and built with partners who take security as seriously as we do.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="ofti-band" style="padding-top:0">
+  <div class="wrap">
+    <div class="ofti-card reveal">
+      <div>
+        <span class="eyebrow">Behind walletii</span>
+        <h3>Developed by Ooredoo Fintech</h3>
+        <p class="sub" style="margin-top:8px">Want to partner with us or explore collaboration opportunities? Get in touch with the Ooredoo Fintech team.</p>
+      </div>
+      <a class="btn btn-ink" href="https://www.ofti.app/">Visit ofti.app →</a>
+    </div>
+  </div>
+</section>
+
+
+<section class="cta-band" id="download">
+  <div class="wrap reveal">
+    <h2>Join the walletii community</h2>
+    <p>Download walletii from your app store and make managing your money simple — wherever home is.</p>
+    <a class="btn btn-teal" href="https://om.wlti.co/orKA/ga9g2xt5">App Store</a>
+    <a class="btn btn-ink" style="border:1px solid rgba(255,255,255,.25);margin-left:10px" href="https://om.wlti.co/z4sY/00sodft7">Google Play</a>
+    <p class="support-line">We're here 24/7 — call <a href="tel:+96880008880">8000 8880</a> or email <a href="mailto:support.om@walletii.com">support.om@walletii.com</a>.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="w">wallet<i>ii</i></div>
+        <p>A smart, modern digital wallet built by Ooredoo Fintech — financial clarity and control, designed around local needs.</p>
+        <div class="lang-row">
+          <a href="https://www.walletii.com/om-en">English</a>
+          <a href="https://www.walletii.com/om-ar">العربية</a>
+          <a href="https://www.walletii.com/om-hi">हिन्दी</a>
+        </div>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about">About us</a></li>
+          <li><a href="https://www.ofti.app/">About OFTI</a></li>
+          <li><a href="faq">FAQs</a></li>
+          <li><a href="https://www.walletii.com/om-en/whistleblowing">Whistleblowing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="features">Features</a></li>
+          <li><a href="loyalty">Loyalty</a></li>
+          <li><a href="features#fees">Fee guide</a></li>
+          <li><a href="https://www.walletii.com/om-en/transaction-limits">Transaction limits</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="https://www.walletii.com/om-en/customer-terms">Customer terms</a></li>
+          <li><a href="https://www.walletii.com/om-en/privacy-notice">Privacy notice</a></li>
+          <li><a href="https://www.walletii.com/om-en/complaints-and-disputes">Complaints &amp; disputes</a></li>
+          <li><a href="https://www.walletii.com/om-en/loyalty-terms-and-conditions">Loyalty terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 walletii. All rights reserved. Licensed by the Central Bank of Oman.</span>
+      <span class="ooredoo">Part of the <b>Ooredoo</b> Group</span>
+    </div>
+  </div>
+</footer>
+<script>(function(){
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+})();</script>
+</body>
+</html>
